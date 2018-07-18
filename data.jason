@@ -1,0 +1,66 @@
+
+{
+	"frutas": [
+		"banana",
+		"laranja",
+		"abacaxi",
+		"coco",
+		"uva",
+		"melancia",
+		"cereja",
+		"goiaba",
+		"acerola",
+		"ameixa"
+
+	],
+	"nomes": [
+		"ramon",
+		"renan",
+		"lucas",
+		"joao",
+		"gustavo",
+		"thiago",
+		"francisco",
+		"jose",
+		"renata",
+		"janaina"
+	],
+	"cidades":[
+		"vitoria",
+		"belem",
+		"campinas",
+		"cuiaba",
+		"salvador",
+		"fortaleza",
+		"natal",
+		"curitiba",
+		"manaus"
+	],
+	"objetos":[
+		"computador",
+		"televisao",
+		"controle",
+		"mesa",
+		"cadeira",
+		"ventilador",
+		"radio",
+		"chave",
+		"lapis",
+		"panela"
+	],
+	"lugares":[
+		"museu",
+		"banco",
+		"clube",
+		"bar",
+		"praça",
+		"igreja",
+		"supermercado",
+		"padaria",
+		"restaurante",
+		"faculdade"
+	]
+
+}
+
+
