@@ -5,13 +5,13 @@ letrasUsadas = ""  # serve para armazenar as letras que já foram digitadas
 caracteresPermitidos = "abcdefghijklmnopqrstuvwxyz"  # limita os caracteres usados no código
 palavraEscolhida = ""
 letrasDescobertas = []
-limiteErros = 5
+limiteErros = 4
 acertoLetras = 0
 erroLetras = 0
 categorias=["frutas","nomes","lugares","cidades","objetos"]
 
 desenhoTela = Imprimir()
-os.system('cls' if os.name == 'nt' else 'clear')  # Vai limpar tela, tanto no windows ou linux
+os.system('cls' if os.name == 'nt' else 'clear')  # Vai limpar tela
 data = json.load(open('data.json'))  # carrega dados do arquivo json
 nome = input("Digite seu nome: ")
 print("\n*** Jogo da Forca em Python ***")  # titulo do jogo
@@ -85,7 +85,7 @@ def entradaTeclado():
 
 while erroLetras < limiteErros and acertoLetras < len(
         palavraEscolhida):  # Definição do que pode dar game over e vitória
-    if (erroLetras == 4):
+    if (erroLetras == 3):
         print("Última tentativa, próximo erro, perde o jogo. ")
         print("A categoria é:", categoria)
     entradaTeclado()
