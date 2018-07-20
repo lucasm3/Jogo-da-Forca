@@ -1,0 +1,75 @@
+import pymysql as pms
+
+
+# def inserir_temas
+
+#
+
+
+def inserir_elemento_na_tabela():
+    
+    numero_de_palavras = int(input('Digite quantas palavras você deseja inserir: '))
+    
+    for i in range(numero_de_palavras):
+
+        palavra = input('Digite a palavra a ser inserida: ')
+        comando_db = "INSERT INTO palavras VALUES({}, '{}')".format(i, palavra)
+        mariadb.execute(comando_db)
+    
+    return None
+
+
+def criar_tabela_no_banco(): #cria tabelas no banco de dados selecionado
+
+    nome_tabela = input('Insira um nome para tabela: ')
+    while True:
+        parametros = input() #cria parâmetros na tabela (colunas)
+        if parametros == 'acabou': #quando o nome do parâmetro for 'acabou', será interrompida a criação de novos perâmetros
+            break
+
+    comando_db = "CREATE TABLE {}({})".format(nome_tabela,parametros)
+
+    mariadb.execute(comando_db)
+
+ aux = input('Digite o Banco a ser manipulado: ')
+
+#import random
+
+#def ler_informacoes_tabela():
+ #   nome_da_tabela = input('Digite o nome da tabela:' )
+  #  if nome_da_tabela == True:
+
+   #     random.choice()
+
+connection = pms.connect(host='127.0.0.1',
+                             user='root',
+                             password='amanda',
+                             db= 'test',
+                             charset='utf8mb4',
+                             cursorclass=pms.cursors.DictCursor)
+
+
+try:
+    # Create a cursor object
+    mariadb = connection.cursor()
+    criar_tabela_no_banco()
+    # SQL query string
+    # # Execute the comando_db
+    mariadb.execute(comando_db)
+    # # SQL query string
+    comando_db = "show tables"
+    print('test1')
+    # Execute the comando_db
+    #.execute(comando_db)
+    #Fetch all the rows
+    rows = mariadb.fetchall()
+    print(rows)
+    comando_db = "INSERT INTO palavras VALUES(1, 'Melancia')"
+    inserir_elemento_na_tabela()
+    deletar_banco_de_dados()
+except Exception as e:
+    print("Exception occured:{}".format(e))
+finally:
+    connection.commit()
+    connection.close()
+
